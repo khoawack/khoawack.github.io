@@ -1,0 +1,760 @@
+html {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background: linear-gradient(to bottom right, #000000, #111553);
+  background-attachment: fixed;
+  background-size: cover;
+  animation-name: bg-animation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile {
+  margin-top: 10px;
+  margin-left: 20px;
+  height: 50px;
+  width: 500px;
+  color:white;
+  font-size: 25px;
+  font-family: Urbanist;
+  display:flex;
+}
+
+.profile-pic img{
+  border-radius: 50%;
+  height: 100%;
+}
+
+
+.title h1{
+  color:white;
+  font-size: 25px;
+  font-family: Urbanist;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.title{
+  width: 200px;
+}
+
+.list{
+  margin-top: 10px;
+  margin-right: 25px;
+}
+
+.list button{
+  background-color: transparent;
+  border: none;
+}
+
+.list button i {
+  color: white;
+  font-size: 40px;
+  transition: color 0.3s ease-out; /* Add transition for smooth color change */
+}
+
+.list button:hover i {
+  color: grey;
+}
+
+.header-main {
+  margin: 275px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  font-family: Overpass;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  margin: 0px;
+  color: rgb(117, 117, 117);
+  font-family: Overpass;
+}
+
+
+.shape {
+  background: #353b92;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: shape-animation 45s linear infinite;
+}
+
+.shape2 {
+  background: #353b92;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: shape-animation2 45s linear infinite;
+}
+
+.square {
+  background-color: transparent;
+
+  top: 25%;
+  left: 80%;
+  width: 600px;
+  height: 600px;
+  box-shadow: 0 0 0 1px rgb(160, 160, 160);
+  animation: square-animation 45s linear infinite;
+}
+
+.square2 {
+  background-color: transparent;
+  top: 90%;
+  left: 15%;
+  width: 550px;
+  height: 550px;
+  box-shadow: 0 0 0 1px rgb(165, 165, 165);
+  animation: square-animation2 45s linear infinite;
+}
+
+@keyframes square-animation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes square-animation2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+
+.square,
+.square2 {
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: none; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation: fadeIn 0.3s ease-out;
+  animation: slideIn 0.5s ease-out;
+}
+
+.modal.closing {
+  animation: slideOut 0.5s ease-out;
+}
+
+.modal-content {
+  background-color: rgba(20, 20, 20, 0.99);
+  height: 100%; /* Full height */
+  width: 100%; /* Could be more or less, depending on screen size */
+  animation: slideIn 0.5s ease-out;
+}
+
+
+
+@keyframes slideOut {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animation for modal slide-in */
+@keyframes slideIn {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+/* The Close Button */
+.close {
+  float: right;
+  padding-top: 8px;
+  padding-right: 30px;
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  transition: opacity 0.3s ease-out;
+}
+
+.close:hover,
+.close:focus {
+  opacity: 0.5;
+}
+
+.close:hover {
+  color: grey;
+}
+
+.close:active {
+  opacity: 0.8;
+}
+
+.modal-content ul {
+  list-style: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 0;
+}
+
+.modal-content ul span {
+  margin-left: auto;
+}
+
+.modal-content ul li {
+  display: block;
+  margin-top: 60px;
+  margin-right: 0;
+  margin-bottom: 10px;
+}
+
+.modal-content ul li a {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  padding: 5px;
+  font-size: 25px;
+  font-family: Urbanist;
+  margin: 0;
+  text-decoration: none;
+}
+
+.modal-content ul li a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: grey;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.modal-content ul li a:hover {
+  color: grey;
+}
+
+.modal-content ul li a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+.box {
+  /* border: solid; */
+  /* border-color: red; */
+  width: 100vw;
+  height: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.box2{
+  /* border: solid; */
+  /* border-color: rgb(0, 255, 51); */
+  width: 100vw; 
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.about {
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-family: Urbanist;
+  width: 60vw;
+  margin-right: 5%;
+}
+
+.about p {
+  color: rgb(180, 178, 178);
+  padding: 20px;
+  margin-right: 0;
+  margin-top: 20px;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about h1 {
+  color: #ffffff;
+  align-self: center;
+  font-family: Overpass;
+  font-size: 7rem;
+  height: 100%;
+}
+
+.image-1 {
+  margin-left: 5%;
+  height: 36vw;
+  width: 28vw;
+}
+
+.image-1 img {
+  height: 100%;
+  width: 100%;
+}
+
+.icon-links {
+  text-decoration: none;
+  color:white;
+  display: flex;
+  justify-content: center;
+}
+
+.icons a {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  margin: 0 100px; /* Adjust the margin value to control the space between icons */
+
+}
+
+.contact-info{
+  margin-top: 30px;
+  align-self: center;
+}
+
+.modal-content .active{
+  color:#000fe6;
+}
+
+h1 {
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  font-size: 5rem;
+  font-family: Overpass;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0px;
+  color: rgb(117, 117, 117);
+  font-family: Overpass;
+}
+
+.portflolio-header{
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.box3{
+  /* border: solid; */
+  /* border-color: rgb(0, 208, 255); */
+  width: 100vw; 
+  height: 40vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.box4{
+  /* border: solid; */
+  /* border-color: rgb(255, 98, 0); */
+  width: 100vw; 
+  height: 40vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.top-text{
+  text-align: center;
+}
+
+.box3 .image-port{
+  justify-self: column;
+  height: 32vw;
+  width: 120vw;
+  margin-left: 5%;
+  box-shadow: 8px 8px 20px rgb(255, 255, 255); /* Adding a shadow effect */
+}
+
+.box4 .image-port{
+  justify-self: column;
+  height: 32vw;
+  width: 120vw;
+  margin-right: 5%;
+  box-shadow: 8px 8px 20px rgb(255, 255, 255); /* Adding a shadow effect */
+}
+
+.image-port img{
+  height: 100%;
+  width: 100%;
+}
+
+.project-title{
+  text-align: center;
+  margin-top: 15%;
+  color:white;
+  font-size: 1.9vw;
+  font-family: Overpass;
+  margin-bottom: 15px;
+}
+
+.project {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.summary{
+  display: flex;
+  color: rgb(180, 178, 178);
+  width: 35vw;
+  font-family: Urbanist;
+  font-size: 1.6vw;
+  text-align: center;
+}
+
+.summary p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.links{
+  display: flex;
+  justify-content: space-between;
+}
+
+.links a{
+  color: white;
+  text-decoration: none;
+  font-family: Urbanist;
+  font-size: 1.5vw;
+  text-align: center;
+  margin: 0 7vw;
+}
+
+
+/* STOP------------------- STOP------------------- STOP------------------- STOP------------------- STOP------------------- STOP------------------- */
+@media only screen and (max-width: 768px) {
+
+  .title h1{
+    width: 140px;
+  }
+  
+  .square {
+    background-color: transparent;
+  
+    top: 25%;
+    left: 75%;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 0 0 1px rgb(160, 160, 160);
+    animation: square-animation 45s linear infinite;
+  }
+  
+  .square2 {
+    background-color: transparent;
+    top: 90%;
+    left: 30%;
+    width: 350px;
+    height: 350px;
+    box-shadow: 0 0 0 1px rgb(165, 165, 165);
+    animation: square-animation2 45s linear infinite;
+  }
+  
+  @keyframes square-animation {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  @keyframes square-animation2 {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(-360deg);
+    }
+  }
+
+  .modal-content ul li {
+    display: block;
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .header-main {
+    margin-top: 220px;
+  }
+
+  .header h1 {
+    font-size: 3rem;
+  }
+
+  .header h2 {
+    font-size: 1rem;
+  }
+
+  .nav-bar {
+    height: auto;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-bar ul {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .nav-bar ul li {
+    text-align: center;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar ul li:last-child {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-bar ul li a {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+  }
+
+
+.square,
+.square2 {
+  z-index: -1;
+  pointer-events: none;
+}
+
+.box {
+  width: 100vw;
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 250px;
+}
+
+.about p {
+  padding: 20px;
+  margin-right: 0;
+  margin-top: 0;
+  align-self: center;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.about h1 {
+  align-self: center;
+  font-family: Overpass;
+  margin-top: 20px;
+  font-size: 3.2rem;
+  height: 100%;
+}
+.image-1 {
+  margin: 0;
+  align-self: center;
+  display: flex;
+  height: 100vw;
+  width: 50vw;
+}
+
+.icon-links {
+  display: flex;
+  justify-content: center;
+  margin:0;
+}
+
+.icons {
+  width: 50px;
+  font-size: 40px;
+  align-items: center;
+  margin: 0 20px; /* Adjust the margin value to control the space between icons */
+}
+
+.icons a{
+  width: 50px;
+  font-size: 40px;
+  align-items: center;
+  margin: 0; /* Adjust the margin value to control the space between icons */
+}
+
+.contact-info{
+  font-size: 15px;
+}
+
+.about{
+  margin: 0;
+}
+
+.top-text h1{
+  font-size: 2.5rem;
+}
+
+.top-text h2{
+  font-size: 1rem;
+  
+}
+
+.box2{
+  margin-bottom: 200px;
+}
+
+.box3{
+  height: 120vw;
+}
+
+.image-port{
+  height: 60%;
+}
+
+.box3{
+  width: 100vw; 
+  height: 150vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+.box4{
+  width: 100vw; 
+  height: 150vw;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+.box3 .image-port{
+  align-self: center;
+  justify-self: center;
+  height: 100vw;
+  width: 80vw;
+  margin-left: 0;
+  box-shadow: None;
+}
+
+.box4 .image-port{
+  align-self: center;
+  justify-self: center;
+  height: 100vw;
+  width: 80vw;
+  margin-right: 0;
+  box-shadow: None;
+}
+
+.project-title{
+  font-size: 7.5vw;
+  
+}
+
+.summary{
+  font-size: 4vw;
+  width: 75vw;
+}
+
+.links a{
+  font-size: 4vw;
+}
+
+
+/* this is the closing tag for small screen */
+}
