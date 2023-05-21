@@ -312,8 +312,8 @@ body {
 
 
 .box {
-  border: solid;
-  border-color: red;
+  /* border: solid;
+  border-color: red; */
   width: 100vw;
   height: 50vw;
   display: flex;
@@ -762,4 +762,16 @@ h2 {
 
 
 /* this is the closing tag for small screen */
+}
+
+
+
+@media only screen and (max-width: 410px) {
+
+.box{
+  /* border: solid;
+  border-color: red; */
+  height: 260vw;  
+}
+
 }
