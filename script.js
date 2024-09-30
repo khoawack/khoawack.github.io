@@ -4,17 +4,20 @@ document.addEventListener("DOMContentLoaded", function() {
     var closeButton = document.getElementsByClassName("close")[0];
 
     function openModal() {
-        modal.style.display = "block";
+        modal.style.display = "block"; 
+        setTimeout(function() {
+            modal.classList.add("open"); 
+        }, 10); 
     }
 
     function closeModal() {
-        modal.classList.add("closing"); // Add closing class to initiate the closing animation
+        modal.classList.add("closing");
+        modal.classList.remove("open"); 
 
-        // Wait for the animation to complete before hiding the modal
         setTimeout(function() {
-            modal.style.display = "none"; // Hide the modal
-            modal.classList.remove("closing"); // Remove the closing class
-        }, 500); // Adjust the time according to your animation duration
+            modal.style.display = "none"; 
+            modal.classList.remove("closing"); 
+        }, 500); 
     }
 
     btn.onclick = openModal;
